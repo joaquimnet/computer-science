@@ -1,5 +1,10 @@
+// My first working implementation of the A* search algorithm.
+// I'll leave it here, like this, for historical reasons.
+//
+// Joaquim Neto
+// January 16, 2021.
+
 const PriorityQueue = require('priorityqueuejs');
-// A* search algorithm
 
 const GRID_SIZE = 16;
 
@@ -30,7 +35,7 @@ async function run() {
   const openSetHash = { [startPoint.x + ' ' + startPoint.y]: true };
 
   while (!openSet.isEmpty()) {
-    // await wait(5);
+    await wait(5);
     displayGrid(grid);
     const current = openSet.deq()[2];
     openSetHash[current.x + ' ' + current.y] = 0;
@@ -47,23 +52,18 @@ async function run() {
 
       resetGrid(grid);
       happiestPath.forEach((p) => makePog(p, grid));
-      // Object.values(cameFrom).forEach((p) => makePog(p, grid));
       displayGrid(grid);
-      // console.log('cameFrom: ', cameFrom);
       console.log('Done!');
       return;
     }
 
-    // console.log('boop1');
     for (const neighbor of current.neighbors) {
       let tempGScore = gScore[current.x][current.y] + 1;
       if (tempGScore < gScore[neighbor.x][neighbor.y]) {
-        // console.log('boop2');
         cameFrom[neighbor.x + ' ' + neighbor.y] = current;
         gScore[neighbor.x][neighbor.y] = tempGScore;
         fScore[neighbor.x][neighbor.y] = tempGScore + H(neighbor, grid[END[0]][END[1]]);
         if (!openSetHash[neighbor.x + ' ' + neighbor.y]) {
-          // console.log('openSetHash', Object.keys(openSetHash));
           count += 1;
           openSet.enq([fScore[neighbor.x][neighbor.y], count, neighbor]);
           openSetHash[neighbor.x + ' ' + neighbor.y] = true;
@@ -98,7 +98,6 @@ var reset = (x, y, grid) => (grid[x][y].status = '.');
 var resetGrid = (grid) => {
   for (let x = 0; x < GRID_SIZE; x++) {
     for (let y = 0; y < GRID_SIZE; y++) {
-      // if (isBarrier(x, y, grid)) continue;
       reset(x, y, grid);
     }
   }
