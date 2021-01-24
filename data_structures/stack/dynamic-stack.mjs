@@ -1,27 +1,27 @@
 export class DynamicStack {
   constructor() {
-    this._items = new Array();
+    this.#items = new Array();
   }
 
   push(item) {
-    this._items.push(item);
+    this.#items.push(item);
   }
 
   pop(item) {
     if (this.isEmpty()) {
       return undefined;
     }
-    return this._items.pop();
+    return this.#items.pop();
   }
 
   peek() {
     if (this.isEmpty()) {
       return undefined;
     }
-    return this._items[this._items.length - 1];
+    return this.#items[this.#items.length - 1];
   }
 
   isEmpty() {
-    return this._items.length === 0;
+    return this.#items.length === 0;
   }
 }
