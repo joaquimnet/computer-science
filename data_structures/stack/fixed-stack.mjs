@@ -32,7 +32,7 @@ export class FixedStack {
   }
 
   isFull() {
-    return this.#items.length === size;
+    return this.#items.length === this.size;
   }
 
   isEmpty() {
