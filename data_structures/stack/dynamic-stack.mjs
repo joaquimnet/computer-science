@@ -1,4 +1,5 @@
 export class DynamicStack {
+  #items = new Array();
   constructor() {
     this.#items = new Array();
   }
