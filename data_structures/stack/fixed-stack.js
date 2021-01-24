@@ -1,5 +1,9 @@
 export class FixedStack {
   constructor(size) {
+    const stackSize = Math.floor(Number(size));
+    if (!stackSize || Number.isNaN(stackSize) || stackSize === 0) {
+      throw new ValueError('You must provide a valid stack size');
+    }
     this._items = new Array();
     this._size = size;
   }
