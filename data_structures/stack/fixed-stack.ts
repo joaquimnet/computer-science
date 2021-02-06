@@ -1,6 +1,6 @@
 export class FixedStack<T> {
   #items = new Array<T>();
-  size: number;
+  capacity: number;
 
   constructor(size: number) {
     const stackSize = Math.floor(Number(size));
@@ -8,7 +8,7 @@ export class FixedStack<T> {
       throw new Error('You must provide a valid stack size');
     }
     this.#items = new Array();
-    this.size = size;
+    this.capacity = size;
   }
 
   push(item: T) {
@@ -33,10 +33,14 @@ export class FixedStack<T> {
   }
 
   isFull() {
-    return this.#items.length === this.size;
+    return this.#items.length === this.capacity;
   }
 
   isEmpty() {
     return this.#items.length === 0;
+  }
+
+  get size() {
+    return this.#items.length;
   }
 }
