@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "astar": "node search/a-star",
+    "deno": "deno",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

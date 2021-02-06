@@ -1,4 +1,4 @@
-const Queue = require('../data_structures/queue/queue');
+import { Queue } from '../data_structures/queue/queue.js';
 
 const queue = new Queue();
 
