@@ -25,4 +25,8 @@ export class DynamicStack<T> {
   isEmpty() {
     return this.#items.length === 0;
   }
+
+  get size() {
+    return this.#items.length;
+  }
 }
