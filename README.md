@@ -7,6 +7,7 @@
 ### Algorithms
 
 -   Search
+    -   Binary Search
     -   A\*
 
 ### Data Structures
