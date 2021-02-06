@@ -4,7 +4,7 @@ export class FixedStack<T> {
 
   constructor(size: number) {
     const stackSize = Math.floor(Number(size));
-    if (!stackSize || Number.isNaN(stackSize) || stackSize === 0) {
+    if (!stackSize || Number.isNaN(stackSize) || stackSize <= 0) {
       throw new Error('You must provide a valid stack size');
     }
     this.#items = new Array();
