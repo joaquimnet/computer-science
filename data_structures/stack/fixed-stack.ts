@@ -1,23 +1,24 @@
-export class FixedStack {
-  #items = new Array();
+export class FixedStack<T> {
+  #items = new Array<T>();
+  size: number;
 
-  constructor(size) {
+  constructor(size: number) {
     const stackSize = Math.floor(Number(size));
     if (!stackSize || Number.isNaN(stackSize) || stackSize === 0) {
-      throw new ValueError('You must provide a valid stack size');
+      throw new Error('You must provide a valid stack size');
     }
     this.#items = new Array();
     this.size = size;
   }
 
-  push(item) {
+  push(item: T) {
     if (this.isFull()) {
       throw new RangeError('Index out of bounds');
     }
     this.#items.push(item);
   }
 
-  pop(item) {
+  pop() {
     if (this.isEmpty()) {
       return undefined;
     }

@@ -1,5 +1,5 @@
-import { DynamicStack } from '../data_structures/stack/dynamic-stack.js';
-import { FixedStack } from '../data_structures/stack/fixed-stack.js';
+import { DynamicStack } from '../data_structures/stack/dynamic-stack.ts';
+import { FixedStack } from '../data_structures/stack/fixed-stack.ts';
 
 const fixed = new FixedStack(3);
 

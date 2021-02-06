@@ -1,6 +1,6 @@
-import { Queue } from '../data_structures/queue/queue.js';
+import { Queue } from '../data_structures/queue/queue.ts';
 
-const queue = new Queue();
+const queue = new Queue<string>();
 
 queue.enqueue('One');
 queue.enqueue('Two');

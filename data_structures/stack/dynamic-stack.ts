@@ -1,14 +1,14 @@
-export class DynamicStack {
-  #items = new Array();
+export class DynamicStack<T> {
+  #items = new Array<T>();
   constructor() {
     this.#items = new Array();
   }
 
-  push(item) {
+  push(item: T) {
     this.#items.push(item);
   }
 
-  pop(item) {
+  pop() {
     if (this.isEmpty()) {
       return undefined;
     }

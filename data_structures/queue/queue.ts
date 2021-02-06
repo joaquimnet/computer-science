@@ -1,11 +1,11 @@
-export class Queue {
-  #items = new Array();
+export class Queue<T> {
+  #items = new Array<T>();
 
   constructor() {
     this.#items = new Array();
   }
 
-  enqueue(item) {
+  enqueue(item: T) {
     this.#items.push(item);
   }
 
